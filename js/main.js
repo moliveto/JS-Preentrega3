@@ -71,7 +71,7 @@ function mostrarCatalogoDOM(array) {
 
         containerCatalogo.append(articuloNuevoDiv)
         let agregarBtn = document.getElementById(`agregarBtn${articulo.id}`)
-        console.log(agregarBtn)
+        //console.log(agregarBtn)
         agregarBtn.addEventListener("click", () => {
             agregarAlCarrito(articulo)
         })
@@ -265,21 +265,6 @@ const categoriasAgrupadas = new Set(categorias);
 const categoriasArray = Array.from(categoriasAgrupadas);
 
 console.log(categoriasArray);
-
-// Usamos el método map() para generar los elementos li
-// const elementosLi = categoriasArray.map((categoria) => {
-//     // Generamos el elemento li
-//     const li = document.createElement("li")
-//     li.classList.add("dropdown-item")
-//     li.textContent = categoria
-//     li.href = "#!"
-//     li.onclick = () => {
-//         buscarPorCategory(categoria, catalogo)
-//     }
-
-//     // Devolvemos el elemento li
-//     return li
-// })
 
 const elementosLi = categoriasArray.map((categoria) => {
     // Generamos el elemento li
