@@ -4,6 +4,7 @@ let modalBodyCarrito = document.getElementById("modal-bodyCarrito")
 let botonCarrito = document.getElementById("botonCarrito")
 let buscador = document.getElementById("buscador")
 let coincidenciasDiv = document.getElementById("coincidencias")
+let mostrarTodos = document.getElementById("mostrarTodos")
 
 function ratingToStars(rating) {
     // Crear un string vacío para almacenar las estrellas rellenas.
@@ -201,10 +202,21 @@ function ordenarAlfabeticamenteTitulo(array){
     mostrarCatalogoDOM(ordenadoAlf)
 }
 
-function buscarInfo(buscado,array){
+function buscarPorTitulo(buscado,array){
     let coincidencias = array.filter(
-        (libro) => {
-            return libro.titulo.toLowerCase().includes(buscado.toLowerCase())
+        (article) => {
+            return article.titulo.toLowerCase().includes(buscado.toLowerCase())
+        }
+    )
+    coincidencias.length > 0 ? 
+    (mostrarCatalogoDOM(coincidencias), coincidenciasDiv.innerHTML ="") : 
+    (mostrarCatalogoDOM(array), coincidenciasDiv.innerHTML = `<h3>No hay coincidencias con su búsqueda, este es nuestro catálogo completo</h3>`) 
+}
+
+function buscarPorCategory(buscar,array){
+    let coincidencias = array.filter(
+        (article) => {
+            return article.category.includes(buscar)
         }
     )
     coincidencias.length > 0 ? 
@@ -217,14 +229,16 @@ botonCarrito.addEventListener("click", () => {
     cargarProductosCarrito(productosCarrito)
 })
 
+mostrarTodos.addEventListener("click", () => {
+    mostrarCatalogoDOM(catalogo)
+})
+
+
 buscador.addEventListener("input", () => {
-    console.log(buscador.value)
-    buscarInfo(buscador.value, catalogo)
+    buscarPorTitulo(buscador.value, catalogo)
 })
 
 selectOrden.addEventListener("change", () => {
-    // console.log("Detecto cambio")
-    console.log(selectOrden.value)
     switch(selectOrden.value){
         case "1":
             ordenarMayorMenor(catalogo)
@@ -240,6 +254,39 @@ selectOrden.addEventListener("change", () => {
         break
     }
 })
+
+// Extraemos todas las categorias del catalogo
+const categorias = catalogo.map((article) => article.category);
+
+// Usamos el método Set() para agrupar las categorías
+const categoriasAgrupadas = new Set(categorias);
+
+// Convertimos categoriasAgrupadas en un array
+const categoriasArray = Array.from(categoriasAgrupadas);
+
+console.log(categoriasArray);
+
+// Usamos el método map() para generar los elementos li
+const elementosLi = categoriasArray.map((categoria) => {
+    // Generamos el elemento li
+    const li = document.createElement("li")
+    li.classList.add("dropdown-item")
+    li.textContent = categoria
+    li.href = "#!"
+    li.onclick = () => {
+        buscarPorCategory(categoria, catalogo)
+    }
+
+    // Devolvemos el elemento li
+    return li
+})
+
+// Agregamos los elementos al menú desplegable
+const menuCategorias = document.querySelector("#menu-categorias");
+
+for (const li of elementosLi) {
+  menuCategorias.appendChild(li);
+}
 
 //CÓDIGO
 mostrarCatalogoDOM(catalogo)

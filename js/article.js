@@ -1,13 +1,13 @@
 class Article {
     constructor(id, titulo, marca, category, precio, discount, rating, image) {
         this.id = id,
-        this.titulo = titulo,
-        this.marca = marca,
-        this.category = category,
-        this.precio = precio,
-        this.discount = discount,
-        this.rating = rating,
-        this.image = image
+            this.titulo = titulo,
+            this.marca = marca,
+            this.category = category,
+            this.precio = precio,
+            this.discount = discount,
+            this.rating = rating,
+            this.image = image
     }
 
     //métodos en class se declaran por fuera del constructor
@@ -32,7 +32,7 @@ let catalogo = []
 if (localStorage.getItem("catalogo")) {
 
     for (let article of JSON.parse(localStorage.getItem("catalogo"))) {
-        let articuloStorage = new Article(article.id, article.titulo, article.marca, article.category, article.precio, article.discount, article.rating,  article.image)
+        let articuloStorage = new Article(article.id, article.titulo, article.marca, article.category, article.precio, article.discount, article.rating, article.image)
         catalogo.push(articuloStorage)
     }
 
@@ -44,4 +44,4 @@ if (localStorage.getItem("catalogo")) {
 }
 
 let productosCarrito = JSON.parse(localStorage.getItem("carrito")) ?? []
-console.log(productosCarrito)
+//console.log(productosCarrito)
