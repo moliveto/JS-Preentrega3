@@ -33,11 +33,11 @@ function themeDark(toDark) {
 
 btnToggle.addEventListener("click", () => {
     if (JSON.parse(localStorage.getItem("modoOscuro")) == false) {
-        themeDark(false)
-        localStorage.setItem("modoOscuro", false)
-    }
-    else if (JSON.parse(localStorage.getItem("modoOscuro")) == true) {
         themeDark(true)
         localStorage.setItem("modoOscuro", true)
+    }
+    else if (JSON.parse(localStorage.getItem("modoOscuro")) == true) {
+        themeDark(false)
+        localStorage.setItem("modoOscuro", false)
     }
 })
