@@ -10835,3 +10835,11 @@ textarea.form-control-lg {
   margin-top: auto;
   margin-bottom: auto;
 }
+
+ul, ol {
+  list-style: none;
+}
+
+a:link {
+  text-decoration: none;
+}
