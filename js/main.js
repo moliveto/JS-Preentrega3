@@ -267,15 +267,34 @@ const categoriasArray = Array.from(categoriasAgrupadas);
 console.log(categoriasArray);
 
 // Usamos el método map() para generar los elementos li
+// const elementosLi = categoriasArray.map((categoria) => {
+//     // Generamos el elemento li
+//     const li = document.createElement("li")
+//     li.classList.add("dropdown-item")
+//     li.textContent = categoria
+//     li.href = "#!"
+//     li.onclick = () => {
+//         buscarPorCategory(categoria, catalogo)
+//     }
+
+//     // Devolvemos el elemento li
+//     return li
+// })
+
 const elementosLi = categoriasArray.map((categoria) => {
     // Generamos el elemento li
     const li = document.createElement("li")
-    li.classList.add("dropdown-item")
-    li.textContent = categoria
-    li.href = "#!"
+
+    // Agregamos el atributo id al elemento a
+    const a = document.createElement("a")
+    a.id = `"${categoria}"`
+    a.textContent = categoria
+    a.classList.add("dropdown-item")
+    a.href = "#!"
     li.onclick = () => {
         buscarPorCategory(categoria, catalogo)
     }
+    li.appendChild(a)
 
     // Devolvemos el elemento li
     return li
