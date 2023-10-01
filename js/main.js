@@ -66,7 +66,7 @@ function mostrarCatalogoDOM(array) {
         </div>
         <!-- Product actions-->
         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center"><a id="agregarBtn${articulo.id}" class="btn btn-outline-dark mt-auto" href="#">Agregar al carrito</a></div>
+            <div class="text-center"><a id="agregarBtn${articulo.id}" class="btn btn-secondary mt-auto" href="#">Agregar al carrito</a></div>
         </div>`
 
         containerCatalogo.append(articuloNuevoDiv)
@@ -124,7 +124,7 @@ function cargarProductosCarrito(array){
                  <div class="card-body">
                         <h4 class="card-title">${productoCarrito.titulo}</h4>
                          <p class="card-text">$${productoCarrito.precio}</p> 
-                         <button class= "btn btn-danger" id="botonEliminar${productoCarrito.id}"><i class="fas fa-trash-alt"></i></button>
+                         <button class= "btn btn-secondary text-light" id="botonEliminar${productoCarrito.id}"><i class="fas fa-trash-alt"></i></button>
                  </div>    
             </div>
             `}
