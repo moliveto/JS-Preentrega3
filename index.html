@@ -42,6 +42,14 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item d-flex align-items-center">
+                        <select id="selectOrden" class="form-select form-select-sm align-baseline" aria-label=".form-select-sm example">
+                            <option selected>Ordenar por:</option>
+                            <option value="1">Mayor a menor</option>
+                            <option value="2">Menor a mayor</option>
+                            <option value="3">Alfabéticamente</option>
+                        </select>
+                    </li>
                 </ul>
                 <ul>
                     <form class="d-flex mx-3">
@@ -50,15 +58,8 @@
                     </form>
                 </ul>
                 <ul>
-                    <select id="selectOrden" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                        <option selected>Ordenar por:</option>
-                        <option value="1">Mayor a menor</option>
-                        <option value="2">Menor a mayor</option>
-                        <option value="3">Alfabeticamente</option>
-                    </select>
-                </ul>
-                <ul>
-                    <button id="botonCarrito" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#idModalCarrito">
+                    <button id="botonCarrito" class="btn btn-outline-dark" data-bs-toggle="modal"
+                        data-bs-target="#idModalCarrito">
                         <a id="botonCarrito" data-bs-toggle="modal" data-bs-target="#idModalCarrito"
                             class="btn btn-secondary"><i class="bi-cart-fill me-1"></i></i></a>
                         Carrito
@@ -80,7 +81,7 @@
         </div>
     </header>
     <!-- Section-->
-    <div id="coincidencias"class=""></div>
+    <div id="coincidencias" class=""></div>
     <section class="py-1">
         <div class="container px-4 px-lg-5 mt-5">
             <div id="catalogo" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">

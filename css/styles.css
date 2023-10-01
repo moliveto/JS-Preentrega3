@@ -10829,3 +10829,9 @@ textarea.form-control-lg {
   height: 300px;
   width: 450px;
 }
+
+.align-baseline {
+  vertical-align: baseline !important;
+  margin-top: auto;
+  margin-bottom: auto;
+}
