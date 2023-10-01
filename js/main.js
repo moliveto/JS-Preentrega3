@@ -48,7 +48,7 @@ function mostrarCatalogoDOM(array) {
             `<!-- Sale badge-->
         <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">${articulo.discount > 0 ? 'Oferta' : ''}</div>
         <!-- Product image-->
-        <img class="card-img-top img-fluid article-img" src="/assets/img/${articulo.image}" alt="${articulo.titulo}" />
+        <img class="card-img-top img-fluid article-img" src="./assets/img/${articulo.image}" alt="${articulo.titulo}" />
         <!-- Product details-->
         <div class="card-body p-4">
             <div class="text-center">
@@ -118,7 +118,7 @@ function cargarProductosCarrito(array){
         (productoCarrito) => {
             modalBodyCarrito.innerHTML += `
             <div class="card border-primary mb-3" id ="productoCarrito${productoCarrito.id}" style="max-width: 540px;">
-                 <img class="card-img-top" height="300px" src="assets/img/${productoCarrito.image}" alt="">
+                 <img class="card-img-top" height="300px" src="./assets/img/${productoCarrito.image}" alt="">
                  <div class="card-body">
                         <h4 class="card-title">${productoCarrito.titulo}</h4>
                          <p class="card-text">$${productoCarrito.precio}</p> 
