@@ -21,12 +21,12 @@ class Article {
 }
 
 //Instanciación de objetos: 
-const article1 = new Article(1, "FIDEOS TIRABUZON", "LUCCHETTI", "Arroz y pastas secas", 727, 10, 3, "fideos.jpg")
-const article2 = new Article(2, "ACEITE DE GIRASOL", "NATURA", "Aceites vinagres y acetos", 620, 0, 3, "aceite.jpg")
-const article3 = new Article(3, "ARROZ PARBOIL", "GALLO", "Arroz y pastas secas", 977, 5, 3, "arroz.jpg")
-const article4 = new Article(4, "ATUN ENTERO AL NATURAL", "GOMES DA COSTA", "Conservas de pescado", 1400, 10, 3, "atun.jpg")
-const article5 = new Article(5, "Dulce de Leche", "Manfrey", "Dulces", 581, 1, 3, "dulce-de-leche.jpg")
-const article6 = new Article(6, "GALLETAS SONRISAS", "BAGLEY", "Galletas", 350, 5, 3, "galletas.jpg")
+const article1 = new Article(1, "Fideos Tirabuzon", "LUCCHETTI", "Arroz y pastas secas", 727, 10, 2, "fideos.jpg")
+const article2 = new Article(2, "Aceite de Girasol", "NATURA", "Aceites vinagres y acetos", 620, 0, 5, "aceite.jpg")
+const article3 = new Article(3, "Arroz parboil", "GALLO", "Arroz y pastas secas", 977, 5, 3, "arroz.jpg")
+const article4 = new Article(4, "Atun entero al natural", "GOMES DA COSTA", "Conservas de pescado", 1400, 10, 4, "atun.jpg")
+const article5 = new Article(5, "Dulce de Leche", "Manfrey", "Dulces", 581, 1, 4, "dulce-de-leche.jpg")
+const article6 = new Article(6, "Galletas sonrisas", "BAGLEY", "Galletas", 350, 5, 5, "galletas.jpg")
 
 let catalogo = []
 if (localStorage.getItem("catalogo")) {

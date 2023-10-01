@@ -21,14 +21,14 @@ function ratingToStars(rating) {
 function showPrice(articulo) {
     // Validar que el artículo tenga un descuento.
     if (articulo.discount <= 0) {
-        return `${articulo.precio}`;
+        return `$${articulo.precio}`;
     }
 
     let offer = articulo.precio - articulo.discount
 
     return `
-      <span class="text-muted text-decoration-line-through">${articulo.precio}</span>
-      ${offer}
+      <span class="text-muted text-decoration-line-through">$${articulo.precio}</span>
+      $${offer}
     `;
 }
 
@@ -54,6 +54,7 @@ function mostrarCatalogoDOM(array) {
             <div class="text-center">
                 <!-- Product name-->
                 <h5 class="fw-bolder">${articulo.titulo}</h5>
+                <h7 class="">${articulo.category}</h7>
                 <!-- Product reviews-->
                 <div class="d-flex justify-content-center small text-warning mb-2">
                 ${stars}
